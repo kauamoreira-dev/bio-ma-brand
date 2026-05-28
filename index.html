@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MA BRAND: vestindo homens de sucesso com elegância, presença e identidade."
+    />
+    <meta name="theme-color" content="#050505" />
+    <title>MA BRAND | Bio Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="profile-card reveal" aria-labelledby="profile-name">
+        <div class="profile-glow" aria-hidden="true"></div>
+
+        <figure class="hero-photo">
+          <img id="profile-photo" src="" alt="" width="180" height="180" />
+        </figure>
+
+        <h1 id="profile-name"></h1>
+        <p id="profile-description" class="description"></p>
+
+        <div id="profile-status" class="status-pill">
+          <span aria-hidden="true"></span>
+          <span data-status-text></span>
+        </div>
+      </section>
+
+      <section class="services-section reveal" aria-labelledby="services-title">
+        <p class="eyebrow" id="services-title">DESTAQUES</p>
+        <div class="services-grid" id="services-grid"></div>
+      </section>
+
+      <section class="stores-section reveal" aria-labelledby="stores-title">
+        <p class="eyebrow" id="stores-title">LOJAS</p>
+        <div class="stores-grid" id="stores-grid"></div>
+      </section>
+
+      <section
+        id="social-links"
+        class="links-section reveal"
+        aria-label="Links principais"
+      ></section>
+
+      <section id="final-cta" class="final-cta reveal">
+        <p data-cta-text></p>
+        <a
+          data-cta-button
+          href="#"
+          class="cta-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
