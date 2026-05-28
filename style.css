@@ -768,27 +768,37 @@ h1 {
 
 @media (max-width: 559px) {
   body {
+    isolation: isolate;
     background-color: #050505;
     background:
-      radial-gradient(ellipse at center, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.72) 100%),
-      radial-gradient(ellipse at 50% 0%, rgba(239, 232, 214, 0.026), transparent 22rem),
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.035), transparent 42%),
+      radial-gradient(circle at bottom, rgba(255, 255, 255, 0.018), transparent 38%),
       linear-gradient(145deg, #020202 0%, #050505 54%, #0b0b0b 100%);
     background-color: #050505;
   }
 
   body::before {
-    opacity: 0.28;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06), transparent 45%),
+      radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.03), transparent 40%);
+    background-position: 0 0;
+    background-size: auto;
+    mask-image: none;
+    opacity: 0.72;
   }
 
   .page-shell {
-    background-color: #050505;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
   }
 
   .profile-card {
     isolation: isolate;
     background:
-      linear-gradient(160deg, rgba(255, 255, 255, 0.038), rgba(255, 255, 255, 0.014)),
-      rgba(8, 8, 8, 0.92);
+      linear-gradient(160deg, rgba(255, 255, 255, 0.046), rgba(255, 255, 255, 0.016)),
+      rgba(8, 8, 8, 0.9);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
