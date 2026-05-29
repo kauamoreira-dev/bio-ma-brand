@@ -239,6 +239,67 @@ h1 {
   box-shadow: none;
 }
 
+.hero-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  min-height: 52px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 16px;
+  border: 1px solid rgba(239, 232, 214, 0.24);
+  border-radius: 18px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 850;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.hero-button-primary {
+  color: #111111;
+  background:
+    linear-gradient(135deg, #fffaf0 0%, #e9dfcc 50%, #cfc2ad 100%);
+  box-shadow:
+    0 12px 26px rgba(239, 232, 214, 0.075),
+    0 0 12px rgba(239, 232, 214, 0.035);
+}
+
+.hero-button-secondary {
+  color: #f3ecdf;
+  background:
+    linear-gradient(145deg, rgba(239, 232, 214, 0.07), rgba(255, 255, 255, 0.035)),
+    rgba(10, 10, 10, 0.72);
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+  outline: none;
+  transform: translateY(-2px);
+  border-color: rgba(239, 232, 214, 0.36);
+  filter: saturate(1.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28),
+    0 0 0 3px rgba(239, 232, 214, 0.11);
+}
+
+.hero-button.is-pressing,
+.hero-button:active {
+  transform: translateY(0) scale(0.985);
+}
+
 .links-section {
   display: grid;
   gap: 12px;
@@ -371,9 +432,11 @@ h1 {
 .store-card {
   position: relative;
   overflow: hidden;
+  display: block;
   padding: 18px;
   border: 1px solid rgba(239, 232, 214, 0.13);
   border-radius: 24px;
+  color: inherit;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026) 48%, rgba(255, 255, 255, 0.018)),
     rgba(7, 7, 7, 0.88);
@@ -386,6 +449,10 @@ h1 {
     transform 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease;
+}
+
+a.store-card {
+  cursor: pointer;
 }
 
 .store-card::before {
@@ -405,7 +472,9 @@ h1 {
 }
 
 .store-card:hover,
+.store-card:focus-visible,
 .store-card:focus-within {
+  outline: none;
   transform: translateY(-3px);
   border-color: rgba(239, 232, 214, 0.28);
   box-shadow:
@@ -415,6 +484,7 @@ h1 {
 }
 
 .store-card:hover::before,
+.store-card:focus-visible::before,
 .store-card:focus-within::before {
   opacity: 1;
 }
@@ -463,6 +533,26 @@ h1 {
 .store-hours .social-icon {
   grid-row: 1 / span 2;
   margin-top: 1px;
+}
+
+.store-route-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 26px;
+  color: #eee4d2;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.store-route-cue::after {
+  width: 7px;
+  height: 7px;
+  content: "";
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  opacity: 0.72;
+  transform: rotate(45deg);
 }
 
 .route-button {
@@ -754,6 +844,10 @@ h1 {
 
   .profile-card {
     padding: 38px 30px 30px;
+  }
+
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .services-grid {

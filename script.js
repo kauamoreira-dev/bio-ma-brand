@@ -42,19 +42,27 @@ const createServiceCard = (service) => {
 };
 
 const createStoreCard = (store) => {
-  const article = document.createElement("article");
+  const hasRoute = isValidLink(store.rota);
+  const article = document.createElement(hasRoute ? "a" : "article");
   const heading = document.createElement("div");
   const title = document.createElement("h2");
   const address = document.createElement("p");
   const hours = document.createElement("div");
-  const route = document.createElement("a");
+  const cue = document.createElement("span");
   const schedules = Array.isArray(store.horarios) ? store.horarios : [];
 
   article.className = "store-card reveal-card";
   heading.className = "store-heading";
   address.className = "store-address";
   hours.className = "store-hours";
-  route.className = "route-button";
+  cue.className = "store-route-cue";
+
+  if (hasRoute) {
+    article.href = store.rota;
+    article.target = "_blank";
+    article.rel = "noopener noreferrer";
+    article.setAttribute("aria-label", `Abrir rota para ${store.titulo || "loja"} no Google Maps`);
+  }
 
   heading.innerHTML = socialIcons.location || "";
   title.textContent = store.titulo || "";
@@ -69,13 +77,9 @@ const createStoreCard = (store) => {
     hours.appendChild(line);
   });
 
-  route.href = store.rota || "#";
-  route.target = "_blank";
-  route.rel = "noopener noreferrer";
-  route.textContent = "Ver rota";
-  route.setAttribute("aria-label", `Ver rota para ${store.titulo || "loja"} em uma nova aba`);
+  cue.textContent = "Toque para abrir a rota";
 
-  article.append(heading, address, hours, route);
+  article.append(heading, address, hours, cue);
 
   return article;
 };
@@ -137,6 +141,31 @@ const renderProfile = () => {
     } else {
       status.hidden = true;
     }
+  }
+};
+
+const renderHeroActions = () => {
+  const whatsappButton = document.querySelector("[data-hero-whatsapp]");
+  const scrollButton = document.querySelector("[data-scroll-stores]");
+  const whatsappLink = config.ctaFinal?.linkPrincipal;
+
+  if (whatsappButton) {
+    if (isValidLink(whatsappLink)) {
+      whatsappButton.href = whatsappLink;
+      whatsappButton.textContent = "Falar com a MA BRAND";
+      whatsappButton.setAttribute("aria-label", `Falar com ${config.nome || "MA BRAND"} pelo WhatsApp`);
+    } else {
+      whatsappButton.hidden = true;
+    }
+  }
+
+  if (scrollButton) {
+    scrollButton.addEventListener("click", () => {
+      const storesSection = document.querySelector(".stores-section");
+      if (storesSection) {
+        storesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   }
 };
 
@@ -241,7 +270,7 @@ const setupRevealAnimation = () => {
 };
 
 const setupTouchFeedback = () => {
-  const interactiveLinks = document.querySelectorAll(".main-button, .cta-button, .route-button");
+  const interactiveLinks = document.querySelectorAll(".hero-button, .main-button, .cta-button, .store-card");
 
   interactiveLinks.forEach((link) => {
     link.addEventListener("pointerdown", () => {
@@ -259,6 +288,7 @@ const setupTouchFeedback = () => {
 };
 
 renderProfile();
+renderHeroActions();
 renderServices();
 renderStores();
 renderSocialLinks();

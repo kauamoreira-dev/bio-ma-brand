@@ -14,25 +14,25 @@ window.bioConfig = {
     },
     {
       numero: "02",
-      titulo: "Consultoria de Imagem",
-      descricao: "Combinações e orientações para elevar sua identidade visual.",
+      titulo: "Atendimento Personalizado",
+      descricao: "Orientação para escolher peças que combinam com seu estilo.",
     },
     {
       numero: "03",
-      titulo: "Loja Matriz",
-      descricao: "Atendimento presencial no Centro com experiência premium.",
+      titulo: "Perfumes Masculinos",
+      descricao: "Fragrâncias para complementar sua presença em qualquer ocasião.",
     },
     {
       numero: "04",
-      titulo: "Loja Filial",
-      descricao: "Atendimento no Paraíso Shopping com praticidade e sofisticação.",
+      titulo: "Estilo Completo",
+      descricao: "Roupas, perfumes e acessórios em uma experiência premium.",
     },
   ],
   lojas: [
     {
       titulo: "Loja Matriz",
       endereco: "Rua Inácio Corrêa, 150 B. Entre Rui Barbosa e Galdino Veloso. Centro.",
-      horarios: ["Seg a Sex • 08h às 18h", "Sábado • 08h às 14h"],
+      horarios: ["Segunda a sábado • 09h às 18h30"],
       rota:
         "https://www.google.com/maps/search/?api=1&query=Rua+Inácio+Corrêa,+150+B,+Centro,+Santarém,+PA",
     },
@@ -40,7 +40,7 @@ window.bioConfig = {
       titulo: "Loja Filial",
       endereco:
         "Avenida Mendonça Furtado, 3551, Paraíso Shopping Center, 1º andar, loja 03. Caranazal.",
-      horarios: ["Seg a Sáb • 10h às 22h"],
+      horarios: ["Segunda a sábado • 09h às 18h30"],
       rota:
         "https://www.google.com/maps/search/?api=1&query=Avenida+Mendonça+Furtado,+3551,+Paraíso+Shopping+Center,+Caranazal,+Santarém,+PA",
     },
