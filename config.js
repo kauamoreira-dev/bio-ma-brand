@@ -32,7 +32,7 @@ window.bioConfig = {
     {
       titulo: "Loja Matriz",
       endereco: "Rua Inácio Corrêa, 150 B. Entre Rui Barbosa e Galdino Veloso. Centro.",
-      horarios: ["Segunda a sábado • 09h às 18h30"],
+      horarios: ["Segunda a sexta • 9:00 às 18:30", "Sábado • 9:00 às 17:00"],
       rota:
         "https://www.google.com/maps/search/?api=1&query=Rua+Inácio+Corrêa,+150+B,+Centro,+Santarém,+PA",
     },
@@ -40,7 +40,7 @@ window.bioConfig = {
       titulo: "Loja Filial",
       endereco:
         "Avenida Mendonça Furtado, 3551, Paraíso Shopping Center, 1º andar, loja 03. Caranazal.",
-      horarios: ["Segunda a sábado • 09h às 18h30"],
+      horarios: ["Segunda a sábado • 10:00 às 22:00", "Domingo • 16:00 às 22:00"],
       rota:
         "https://www.google.com/maps/search/?api=1&query=Avenida+Mendonça+Furtado,+3551,+Paraíso+Shopping+Center,+Caranazal,+Santarém,+PA",
     },
